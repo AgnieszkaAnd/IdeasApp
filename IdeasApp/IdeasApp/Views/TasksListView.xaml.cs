@@ -16,9 +16,9 @@ namespace IdeasApp.Views {
     /// <summary>
     /// Interaction logic for TasksListView.xaml
     /// </summary>
-    public partial class TasksListView : Window {
+    /*public partial class TasksListView : Window {
         public TasksListView() {
             InitializeComponent();
         }
-    }
+    }*/
 }

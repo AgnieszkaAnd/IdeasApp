@@ -5,22 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IdeasApp.Views"
         mc:Ignorable="d"
-        Title="MainMenuView" Height="450" Width="800">
+        Title="IdeasApp" Height="450" Width="800" Background="LightGray">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="LoadTasksList" Content="See Tasks List" Grid.Column="1" Grid.Row="1"/>
-        <ContentControl x:Name="ActiveItem" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3"/>
+        <TextBlock Text="IdeasApp" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" FontSize="72"
+                   FontFamily="Britannic Bold"/>
+        <Button x:Name="LoadTasksList" Content="See Tasks List" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center"
+                MaxWidth="200"/>
+        <ContentControl x:Name="ActiveItem" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="8"/>
     </Grid>
-    
-    
-    
+
+
+
 </Window>

@@ -13,7 +13,6 @@ namespace IdeasApp {
 
         public MainMenu() {
             Initialize();
-            SwitchView = 0;
         }
 
         protected override void OnStartup(object sender, StartupEventArgs e) {
