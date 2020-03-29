@@ -4,10 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 
 namespace IdeasApp.ViewModels {
-    public class TasksListViewModel : Screen {
+    public class MainMenuViewModel : Conductor<object> {
 
+        public void LoadTasksList() {
+            ActivateItem(new TasksListViewModel());
+        }
     }
 }
