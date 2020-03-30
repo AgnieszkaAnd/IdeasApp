@@ -14,11 +14,11 @@ using System.Windows.Shapes;
 
 namespace IdeasApp.Views {
     /// <summary>
-    /// Interaction logic for TasksListView.xaml
+    /// Interaction logic for MainMenuView.xaml
     /// </summary>
-    /*public partial class TasksListView : Window {
-        public TasksListView() {
+    public partial class MainMenuView : Window {
+        public MainMenuView() {
             InitializeComponent();
         }
-    }*/
+    }
 }
