@@ -5,15 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IdeasApp.Views"
         mc:Ignorable="d"
-        Height="450" Width="800" Background="LightGray">
+        Height="400" Width="750" Background="#007C89">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
+            <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="Your Tasks are" Grid.Row="0"/>
-        <DataGrid Grid.Row="1">
-            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="5"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Your Tasks are" Grid.Row="0" Grid.Column="1" 
+                   VerticalAlignment="Center" HorizontalAlignment="Center"
+                   FontFamily="Candara Light" FontSize="25" Foreground="White"/>
+        <DataGrid x:Name="People" Grid.Row="1" Grid.Column="1"
+                  Margin="10" FontFamily="Candara Light"
+                  ColumnWidth="auto">
+
         </DataGrid>
 
     </Grid>

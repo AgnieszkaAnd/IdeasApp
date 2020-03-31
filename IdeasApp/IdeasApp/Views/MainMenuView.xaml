@@ -5,16 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IdeasApp.Views"
         mc:Ignorable="d"
-        Title="IdeasApp" Height="450" Width="800" Background="LightGray">
+        Title="IdeasApp" Height="450" Width="800" Background="White" WindowStartupLocation="CenterScreen"
+        ResizeMode="CanMinimize">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="30"/>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
+
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -22,10 +24,18 @@
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="IdeasApp" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" FontSize="72"
-                   FontFamily="Britannic Bold"/>
-        <Button x:Name="LoadTasksList" Content="See Tasks List" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center"
-                MaxWidth="200"/>
+        <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="Import" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center"
+                MinWidth="100" FontFamily="Candara Light" FontSize="18" Style="{StaticResource RoundButtonTemplate}"/>
+            <Button Content="Export" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center"
+                MinWidth="100" FontFamily="Candara Light" FontSize="18" Style="{StaticResource RoundButtonTemplate}"/>
+            <Button Content="Calendar" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center"
+                MinWidth="100" FontFamily="Candara Light" FontSize="18" Style="{StaticResource RoundButtonTemplate}"/>
+        </StackPanel>
+        <TextBlock Text="IdeasApp" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" FontSize="100"
+                   FontFamily="Candara Light"/>
+        <Button x:Name="LoadTasksList" Content="See Tasks List" Grid.Column="1" Grid.Row="6" HorizontalAlignment="Center"
+                MinWidth="150" FontFamily="Candara Light" FontSize="20" Style="{StaticResource RoundButtonTemplate}"/>
         <ContentControl x:Name="ActiveItem" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="8"/>
     </Grid>
 

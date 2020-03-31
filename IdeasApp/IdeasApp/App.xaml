@@ -8,6 +8,7 @@
                 <ResourceDictionary>
                     <local:MainMenu x:Key="MainMenu"/>
                 </ResourceDictionary>
+                <ResourceDictionary Source="ButtonStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

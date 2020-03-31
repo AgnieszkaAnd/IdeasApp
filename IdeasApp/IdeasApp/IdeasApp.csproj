@@ -75,6 +75,7 @@
     <Compile Include="Models\Entry.cs" />
     <Compile Include="Models\EntryRepository.cs" />
     <Compile Include="Models\IDataAccessObject.cs" />
+    <Compile Include="Models\PeopleRepoTest.cs" />
     <Compile Include="ViewModels\MainMenuViewModel.cs" />
     <Compile Include="ViewModels\TasksListViewModel.cs" />
     <Compile Include="Views\MainMenuView.xaml.cs">
@@ -113,6 +114,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Page Include="ButtonStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainMenuView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
