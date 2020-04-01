@@ -14,9 +14,8 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="auto"/>
-
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -32,7 +31,7 @@
             <Button Content="Calendar" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center"
                 MinWidth="100" FontFamily="Candara Light" FontSize="18" Style="{StaticResource RoundButtonTemplate}"/>
         </StackPanel>
-        <TextBlock Text="IdeasApp" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" FontSize="100"
+        <TextBlock Text="IdeasApp" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" FontSize="110"
                    FontFamily="Candara Light"/>
         <Button x:Name="LoadTasksList" Content="See Tasks List" Grid.Column="1" Grid.Row="6" HorizontalAlignment="Center"
                 MinWidth="150" FontFamily="Candara Light" FontSize="20" Style="{StaticResource RoundButtonTemplate}"/>
