@@ -14,6 +14,8 @@ using System.Data;
 
 namespace IdeasApp {
     public class MainMenu : BootstrapperBase {
+        public int SwitchView { get; set; }
+
         public MainMenu() {
             Initialize();
             LetGo();
@@ -27,6 +29,7 @@ namespace IdeasApp {
             //cosTam.ConvertResultToEntry();
         }
         protected override void OnStartup(object sender, StartupEventArgs e) {
+            DisplayRootViewFor<MainMenuViewModel>();
         }
     }
 }
