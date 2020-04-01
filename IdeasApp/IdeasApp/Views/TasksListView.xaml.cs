@@ -11,6 +11,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using IdeasApp.Models;
+using System.Data.SQLite;
+using System.Data.SQLite.Linq;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace IdeasApp.Views {
     /// <summary>
@@ -19,6 +24,10 @@ namespace IdeasApp.Views {
     public partial class TasksListView : Window {
         public TasksListView() {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e) {
+
         }
     }
 }
