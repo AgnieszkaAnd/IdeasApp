@@ -5,16 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IdeasApp.Views"
         mc:Ignorable="d"
-        Height="450" Width="800" Background="LightGray">
+        Height="400" Width="750" Background="#007C89">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
+            <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="5"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="Your Tasks are" Grid.Row="0"/>
-        <DataGrid x:Name="Ideas" Grid.Row="1">
-            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="5"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Your Tasks are" Grid.Row="0" Grid.Column="1" 
+                   VerticalAlignment="Center" HorizontalAlignment="Center"
+                   FontFamily="Candara Light" FontSize="25" Foreground="White"/>
+        <DataGrid x:Name="People" Grid.Row="1" Grid.Column="1"
+                  Margin="10" FontFamily="Candara Light" FontSize="15"
+                  ColumnWidth="*" HorizontalContentAlignment="Stretch"
+                  >
+
         </DataGrid>
+        <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center"
+                    MinHeight="30" Margin="10">
+            <Button Content="Add Entry" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center"
+                MinWidth="150" FontFamily="Candara Light" FontSize="18" Style="{StaticResource RoundButtonTemplate}"
+                Background="White" Foreground="Brown" Margin="10,0,10,0"/>
+            <Button Content="Update Entry" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center"
+                MinWidth="150" FontFamily="Candara Light" FontSize="18" Style="{StaticResource RoundButtonTemplate}"
+                Background="White" Foreground="Brown" Margin="10,0,10,0"/>
+            <Button Content="Delete Entry" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center"
+                MinWidth="150" FontFamily="Candara Light" FontSize="18" Style="{StaticResource RoundButtonTemplate}"
+                Background="White" Foreground="Brown" Margin="10,0,10,0" />
+        </StackPanel>
 
     </Grid>
 </UserControl>
