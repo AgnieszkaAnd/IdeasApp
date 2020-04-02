@@ -18,12 +18,18 @@ namespace IdeasApp {
 
         public MainMenu() {
             Initialize();
-            LetGo();
-
+            //LetGo();
         }
 
         public void LetGo() {
-            SQLiteConnection conn = new SQLiteConnection(@"Data Source=C:\Users\PCx\source\repos\IdeasApp\IdeasApp\IdeasApp\IdeasDb.db");
+            /*SQLiteConnection conn;
+            try {
+                conn = new SQLiteConnection(@"Data Source=C:\Users\PCx\source\repos\IdeasApp\IdeasApp\IdeasApp\IdeasDb.db");
+            } catch {
+                conn = new SQLiteConnection(@"Data Source=C:\Users\asus\Documents\CODECOOL\2_OOP\6_\IdeasApp_v10\IdeasApp\IdeasApp\IdeasDb.db");
+            }*/
+            SQLiteConnection conn = new SQLiteConnection(@"Data Source=C:\Users\asus\Documents\CODECOOL\2_OOP\6_\IdeasApp_v10\IdeasApp\IdeasApp\IdeasDb.db");
+
             EntryRepository cosTam = new EntryRepository(conn);
             var swag = cosTam.ReadAll();
             //cosTam.ConvertResultToEntry();

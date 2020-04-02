@@ -34,12 +34,12 @@ namespace IdeasApp.Models {
         public List<Entry> ConvertResultToEntryList(EnumerableRowCollection<DataRow> QueryResult) {
             var Entries = (from row in QueryResult
                            select new Entry {
-                               Id = row.Field<int>("Id"),
+                               Id = (int)row.Field<long>("Id"),
                                Category = row.Field<string>("Category"),
                                TaskName = row.Field<string>("TaskName"),
                                Deadline = row.Field<string>("Deadline"),
                                Priority = row.Field<string>("Priority"),
-                               EstimatedTime = row.Field<decimal>("EstimatedTime"),
+                               EstimatedTime = row.Field<string>("EstimatedTime"),
                            }).ToList();
             return Entries;
         }
@@ -49,7 +49,8 @@ namespace IdeasApp.Models {
         public void Delete() { }
         public Entry ReadById(int id) {
             var queryResult = runQuery($"SELECT * FROM Tasks WHERE Id = {id}");
-            return ConvertResultToEntryList(queryResult);
+            //return ConvertResultToEntryList(queryResult);
+            return null;
         }
 
         /*  public Entry ConvertResultToEntry(int id) {
