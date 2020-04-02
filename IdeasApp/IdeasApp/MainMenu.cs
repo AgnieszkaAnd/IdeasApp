@@ -17,7 +17,7 @@ namespace IdeasApp {
         public int SwitchView { get; set; }
 
         public MainMenu() {
-            Initialize();
+           // Initialize();
             LetGo();
 
         }
@@ -25,7 +25,21 @@ namespace IdeasApp {
         public void LetGo() {
             SQLiteConnection conn = new SQLiteConnection(@"Data Source=C:\Users\PCx\source\repos\IdeasApp\IdeasApp\IdeasApp\IdeasDb.db");
             EntryRepository cosTam = new EntryRepository(conn);
-            var swag = cosTam.ReadAll();
+            Entry entry = new Entry();
+            entry.Category = "asd";
+            entry.TaskName = "usd";
+            entry.EstimatedTime = 2;
+            entry.Deadline = DateTime.Now;
+            entry.Priority = "HIPEREXTRAHEHESZKI";
+            
+            cosTam.Create(entry);
+            var readAll = cosTam.ReadAll();
+            var entryToRemove = readAll.First();
+            var entryToUpdate = readAll.Last();
+            cosTam.Delete(entryToRemove);
+            entryToUpdate.TaskName="Cowabunga!";
+            cosTam.Update(entryToUpdate);
+            
             //cosTam.ConvertResultToEntry();
         }
         protected override void OnStartup(object sender, StartupEventArgs e) {

@@ -98,6 +98,12 @@
     <Compile Include="Models\Entry.cs" />
     <Compile Include="Models\EntryRepository.cs" />
     <Compile Include="Models\IDataAccessObject.cs" />
+    <Compile Include="Models\Model1.cs" />
+    <Compile Include="Models\Model1.Designer.cs">
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="ViewModels\MainMenuViewModel.cs" />
     <Compile Include="ViewModels\TasksListViewModel.cs" />
     <Compile Include="Views\MainMenuView.xaml.cs">
