@@ -24,8 +24,24 @@
         <DataGrid x:Name="Ideas" Grid.Row="1" Grid.Column="1"
                   Margin="10" FontFamily="Candara Light" FontSize="15"
                   ColumnWidth="*" HorizontalContentAlignment="Stretch"
-                  VerticalContentAlignment="Stretch">
+                  VerticalContentAlignment="Stretch"
+                  AutoGenerateColumns="False"
+                  SelectedItem="{Binding SelectedEntry, Mode=TwoWay}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Path=Id}"/>
+                <DataGridTextColumn Header="Category" Binding="{Binding Path=Category}"/>
+                <DataGridTextColumn Header="TaskName" Binding="{Binding Path=TaskName}"/>
+                <DataGridTextColumn Header="Priority" Binding="{Binding Path=Priority}"/>
+                <DataGridTextColumn Header="EstimatedTime" Binding="{Binding Path=EstimatedTime}"/>
 
+                <DataGridTemplateColumn Header="Deadline">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Deadline, StringFormat=d}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
         </DataGrid>
         <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center"
                     MinHeight="30" Margin="10">

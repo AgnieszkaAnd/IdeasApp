@@ -7,9 +7,12 @@ using System.Threading.Tasks;
 
 namespace IdeasApp.ViewModels {
     public class MainMenuViewModel : Conductor<object> {
+        
+        public static TasksListViewModel taskTableView;
 
         public void LoadTasksList() {
-            ActivateItem(new TasksListViewModel());
+            taskTableView = new TasksListViewModel();
+            ActivateItem(taskTableView);
         }
     }
 }

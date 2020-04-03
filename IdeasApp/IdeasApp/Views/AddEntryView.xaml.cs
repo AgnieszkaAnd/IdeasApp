@@ -18,23 +18,26 @@ namespace IdeasApp.Views {
     /// Interaction logic for AddEntryView.xaml
     /// </summary>
     public partial class AddEntryView : Window {
-        public AddEntryView(string question, string defaultAnswer = "") {
-            InitializeComponent();
-			lblQuestion.Content = question;
-			txtAnswer.Text = defaultAnswer;
+		public AddEntryView() {
+
+		//public AddEntryView(string question, string defaultAnswer = "") {
+			InitializeComponent();
+		//	lblQuestion.Content = question;
+		//	txtAnswer.Text = defaultAnswer;
 		}
 
-		private void btnDialogOk_Click(object sender, RoutedEventArgs e) {
-			this.DialogResult = true;
-		}
+		/*
+private void btnDialogOk_Click(object sender, RoutedEventArgs e) {
+	this.DialogResult = true;
+}
 
-		private void Window_ContentRendered(object sender, EventArgs e) {
-			txtAnswer.SelectAll();
-			txtAnswer.Focus();
-		}
+private void Window_ContentRendered(object sender, EventArgs e) {
+	txtAnswer.SelectAll();
+	txtAnswer.Focus();
+}
 
-		public string Answer {
-			get { return txtAnswer.Text; }
-		}
+public string Answer {
+	get { return txtAnswer.Text; }
+}*/
 	}
 }

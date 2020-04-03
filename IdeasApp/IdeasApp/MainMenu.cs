@@ -15,25 +15,16 @@ using System.Data;
 namespace IdeasApp {
     public class MainMenu : BootstrapperBase {
         public int SwitchView { get; set; }
+        public static SQLiteConnection connectionToDB;
+        public static EntryRepository ideasDataTable;
 
         public MainMenu() {
             Initialize();
-            //LetGo();
+
+            connectionToDB = new SQLiteConnection(@"Data Source=C:\Users\asus\Documents\CODECOOL\2_OOP\6_\IdeasApp_v10\IdeasApp\IdeasApp\IdeasDb.db");
+            ideasDataTable = new EntryRepository(connectionToDB);
         }
 
-        public void LetGo() {
-            /*SQLiteConnection conn;
-            try {
-                conn = new SQLiteConnection(@"Data Source=C:\Users\PCx\source\repos\IdeasApp\IdeasApp\IdeasApp\IdeasDb.db");
-            } catch {
-                conn = new SQLiteConnection(@"Data Source=C:\Users\asus\Documents\CODECOOL\2_OOP\6_\IdeasApp_v10\IdeasApp\IdeasApp\IdeasDb.db");
-            }*/
-            SQLiteConnection conn = new SQLiteConnection(@"Data Source=C:\Users\asus\Documents\CODECOOL\2_OOP\6_\IdeasApp_v10\IdeasApp\IdeasApp\IdeasDb.db");
-
-            EntryRepository cosTam = new EntryRepository(conn);
-            var swag = cosTam.ReadAll();
-            //cosTam.ConvertResultToEntry();
-        }
         protected override void OnStartup(object sender, StartupEventArgs e) {
             DisplayRootViewFor<MainMenuViewModel>();
         }

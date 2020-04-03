@@ -11,28 +11,30 @@ using System.Windows;
 namespace IdeasApp.ViewModels {
     public class TasksListViewModel : Conductor<object> {
 
+        public static IWindowManager manager = new WindowManager();
+        public static Entry SelectedEntry { get; set; }
 
         public BindableCollection<Entry> Ideas { get; set; }
 
         public TasksListViewModel() {
-            SQLiteConnection connectionToDB = new SQLiteConnection(@"Data Source=C:\Users\asus\Documents\CODECOOL\2_OOP\6_\IdeasApp_v10\IdeasApp\IdeasApp\IdeasDb.db");
-
-            EntryRepository ideasDataTable = new EntryRepository(connectionToDB);
-            var ideasList = ideasDataTable.ReadAll();
+            var ideasList = MainMenu.ideasDataTable.ReadAll();
             Ideas = new BindableCollection<Entry>(ideasList);
         }
         public void AddEntry() {
-            ActivateItem(new AddEntryViewModel());
+            AddEntryViewModel addingWindow = new AddEntryViewModel();
+            manager.ShowWindow(addingWindow, null, null);
+            ActivateItem(addingWindow);
         }
 
         public void UpdateEntry() {
+            UpdateEntryViewModel updateWindow = new UpdateEntryViewModel();
+            manager.ShowWindow(updateWindow, null, null);
+            ActivateItem(updateWindow);
         }
 
         public void DeleteEntry() {
+            MainMenu.ideasDataTable.Delete(SelectedEntry);
+            MainMenuViewModel.taskTableView.Ideas.Refresh();
         }
-        /*private void btnEnterName_Click(object sender, RoutedEventArgs e) {
-            AddEntryViewModel inputDialog = new AddEntryViewModel("Please enter your name:", "John Doe");
-        }*/
-
     }
 }
