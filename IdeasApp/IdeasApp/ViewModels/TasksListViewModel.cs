@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows;
 
 namespace IdeasApp.ViewModels {
-    public class TasksListViewModel : Screen {
+    public class TasksListViewModel : Conductor<object> {
 
 
         public BindableCollection<Entry> Ideas { get; set; }
@@ -21,5 +21,18 @@ namespace IdeasApp.ViewModels {
             var ideasList = ideasDataTable.ReadAll();
             Ideas = new BindableCollection<Entry>(ideasList);
         }
+        public void AddEntry() {
+            ActivateItem(new AddEntryViewModel());
+        }
+
+        public void UpdateEntry() {
+        }
+
+        public void DeleteEntry() {
+        }
+        /*private void btnEnterName_Click(object sender, RoutedEventArgs e) {
+            AddEntryViewModel inputDialog = new AddEntryViewModel("Please enter your name:", "John Doe");
+        }*/
+
     }
 }

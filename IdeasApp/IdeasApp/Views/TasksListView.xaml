@@ -21,21 +21,21 @@
         <TextBlock Text="Your Tasks are" Grid.Row="0" Grid.Column="1" 
                    VerticalAlignment="Center" HorizontalAlignment="Center"
                    FontFamily="Candara Light" FontSize="25" Foreground="White"/>
-        <DataGrid x:Name="People" Grid.Row="1" Grid.Column="1"
+        <DataGrid x:Name="Ideas" Grid.Row="1" Grid.Column="1"
                   Margin="10" FontFamily="Candara Light" FontSize="15"
                   ColumnWidth="*" HorizontalContentAlignment="Stretch"
-                  >
+                  VerticalContentAlignment="Stretch">
 
         </DataGrid>
         <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center"
                     MinHeight="30" Margin="10">
-            <Button Content="Add Entry" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center"
+            <Button x:Name="AddEntry" Content="Add Entry" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center"
                 MinWidth="150" FontFamily="Candara Light" FontSize="18" Style="{StaticResource RoundButtonTemplate}"
                 Background="White" Foreground="Brown" Margin="10,0,10,0"/>
-            <Button Content="Update Entry" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center"
+            <Button x:Name="UpdateEntry" Content="Update Entry" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center"
                 MinWidth="150" FontFamily="Candara Light" FontSize="18" Style="{StaticResource RoundButtonTemplate}"
                 Background="White" Foreground="Brown" Margin="10,0,10,0"/>
-            <Button Content="Delete Entry" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center"
+            <Button x:Name="DeleteEntry" Content="Delete Entry" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center"
                 MinWidth="150" FontFamily="Candara Light" FontSize="18" Style="{StaticResource RoundButtonTemplate}"
                 Background="White" Foreground="Brown" Margin="10,0,10,0" />
         </StackPanel>

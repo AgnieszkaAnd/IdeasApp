@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 using System.Data;
 
 namespace IdeasApp.Models {
-    class EntryRepository: IDataAccessObject {
+    public class EntryRepository: IDataAccessObject {
         private readonly SQLiteConnection Con;
         public EntryRepository(SQLiteConnection DbPath) => Con = DbPath;
 
