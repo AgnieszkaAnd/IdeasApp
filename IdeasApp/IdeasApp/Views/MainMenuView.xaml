@@ -15,7 +15,7 @@
     </Window.Background>
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="C:\Users\PCx\source\repos\IdeasApp\IdeasApp\IdeasApp\IdeasApp\Resources\bg.png"/>
+            <ImageBrush ImageSource="C:\Users\asus\Documents\CODECOOL\2_OOP\6_\IdeasApp_v10\IdeasApp\IdeasApp\IdeasApp\Resources\bg.png"/>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
@@ -31,7 +31,7 @@
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Image Source="C:\Users\PCx\source\repos\IdeasApp\IdeasApp\IdeasApp\IdeasApp\Resources\logo.png"
+        <Image Source="C:\Users\asus\Documents\CODECOOL\2_OOP\6_\IdeasApp_v10\IdeasApp\IdeasApp\IdeasApp\Resources\logo.png"
                Grid.Column="1" Grid.Row="2" Grid.RowSpan="3" Stretch="None"
                VerticalAlignment="Center"/>
         <StackPanel Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" Orientation="Horizontal" Margin="0,10,0,0">
