@@ -21,7 +21,7 @@ namespace IdeasApp {
         public MainMenu() {
             Initialize();
 
-            connectionToDB = new SQLiteConnection(@"Data Source=C:\Users\asus\Documents\CODECOOL\2_OOP\6_\IdeasApp_v10\IdeasApp\IdeasApp\IdeasDb.db");
+            connectionToDB = new SQLiteConnection(@"data source=C:\Users\PCx\source\repos\IdeasApp\IdeasApp\IdeasApp\IdeasDb.db");
             ideasDataTable = new EntryRepository(connectionToDB);
         }
 
