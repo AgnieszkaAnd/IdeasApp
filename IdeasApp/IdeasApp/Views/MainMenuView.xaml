@@ -39,11 +39,11 @@
                 <DropShadowEffect Opacity="0.3"/>
             </StackPanel.Effect>
             <Button Content="Import" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center"
-                MinWidth="100" MinHeight="30" FontFamily="Candara Light" FontSize="18" Style="{StaticResource RoundButtonTemplate}">
+                MinWidth="100" MinHeight="30" FontFamily="Candara Light" FontSize="18" Style="{StaticResource RoundButtonTemplate}" Foreground="White">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FF26ACA6" Offset="0"/>
-                        <GradientStop Color="White" Offset="1"/>
+                        <GradientStop Color="#FFB9E8E8" Offset="1"/>
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
@@ -52,7 +52,7 @@
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FF26ACA6" Offset="0"/>
-                        <GradientStop Color="White" Offset="1"/>
+                        <GradientStop Color="#FFB9E8E8" Offset="1"/>
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
@@ -61,7 +61,7 @@
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FF26ACA6" Offset="0"/>
-                        <GradientStop Color="White" Offset="1"/>
+                        <GradientStop Color="#FFB9E8E8" Offset="1"/>
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
@@ -73,7 +73,7 @@
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF26ACA6" Offset="0"/>
-                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FF88EFFF" Offset="1"/>
                 </LinearGradientBrush>
             </Button.Background>
             <Button.Effect>
