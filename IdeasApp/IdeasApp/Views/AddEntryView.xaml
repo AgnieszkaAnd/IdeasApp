@@ -34,7 +34,8 @@
             <TextBlock Text="TaskName" FontFamily="Candara light" FontSize="15"/>
             <TextBox x:Name="taskNameInput" Text="{Binding NewEntryTaskName, Mode=TwoWay}"></TextBox>
             <TextBlock Text="Deadline" FontFamily="Candara light" FontSize="15"/>
-            <TextBox x:Name="deadlineInput"></TextBox>
+            <!--<TextBox x:Name="deadlineInput"></TextBox>-->
+            <DatePicker x:Name="deadlineInput" SelectedDate="{Binding Path=NewEntryDeadline}"/>
             <TextBlock Text="Priority" FontFamily="Candara light" FontSize="15"/>
             <!--<TextBox x:Name="priorityInput" Text="{Binding NewEntryPriority, Mode=TwoWay}"></TextBox>-->
             <!--<ComboBox x:Name="priorityInput" ItemsSource="{Binding Path=Priorities}" SelectedItem="{Binding Path=NewEntryPriority}"/>-->

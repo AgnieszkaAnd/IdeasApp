@@ -9,10 +9,11 @@ using System.Windows;
 
 namespace IdeasApp.ViewModels {
     class UpdateEntryViewModel : Screen {
-		public string UpdateEntryCategory { get; set; }
-		public string UpdateEntryTaskName { get; set; }
-		public string UpdateEntryPriority { get; set; }
-		public int UpdateEntryEstTime { get; set; }
+		public string UpdateEntryCategory { get; set; } = TasksListViewModel.SelectedEntry.Category;
+		public string UpdateEntryTaskName { get; set; } = TasksListViewModel.SelectedEntry.TaskName;
+		public string UpdateEntryPriority { get; set; } = TasksListViewModel.SelectedEntry.Priority;
+		public int UpdateEntryEstTime { get; set; } = TasksListViewModel.SelectedEntry.EstimatedTime;
+		public DateTime UpdateEntryDeadline { get; set; } = TasksListViewModel.SelectedEntry.Deadline;
 
 		public List<string> Priorities { get; set; } = new List<string>() {
 			"IMPORTANT_URGENT",
@@ -26,7 +27,7 @@ namespace IdeasApp.ViewModels {
 				TasksListViewModel.SelectedEntry.TaskName = UpdateEntryTaskName;
 				TasksListViewModel.SelectedEntry.Priority = UpdateEntryPriority;
 				TasksListViewModel.SelectedEntry.EstimatedTime = UpdateEntryEstTime;
-				TasksListViewModel.SelectedEntry.Deadline = DateTime.Now;
+				TasksListViewModel.SelectedEntry.Deadline = UpdateEntryDeadline;
 				Startup.ideasDataTable.Update(TasksListViewModel.SelectedEntry);
 			// TODO add logic under catch statement
 			} catch (NullReferenceException) { }

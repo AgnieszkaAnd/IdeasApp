@@ -34,10 +34,11 @@
             <TextBlock Text="TaskName" FontFamily="Candara light" FontSize="15"/>
             <TextBox x:Name="taskNameInput" Text="{Binding UpdateEntryTaskName, Mode=TwoWay}"></TextBox>
             <TextBlock Text="Deadline" FontFamily="Candara light" FontSize="15"/>
-            <TextBox x:Name="deadlineInput"></TextBox>
+            <!--<TextBox x:Name="deadlineInput"></TextBox>-->
+            <DatePicker x:Name="deadlineInput" SelectedDate="{Binding Path=UpdateEntryDeadline, Mode=TwoWay}"/>
             <TextBlock Text="Priority" FontFamily="Candara light" FontSize="15"/>
             <!--<TextBox x:Name="priorityInput" Text="{Binding UpdateEntryPriority, Mode=TwoWay}"></TextBox>-->
-            <ComboBox x:Name="priorityInput" ItemsSource="{Binding Path=Priorities}" SelectedItem="{Binding Path=UpdateEntryPriority}"/>
+            <ComboBox x:Name="priorityInput" ItemsSource="{Binding Path=Priorities}" SelectedItem="{Binding Path=UpdateEntryPriority, Mode=TwoWay}"/>
             <TextBlock Text="Estimated Time" FontFamily="Candara light" FontSize="15"/>
             <TextBox x:Name="estTimeInput" Text="{Binding UpdateEntryEstTime, Mode=TwoWay}"></TextBox>
         </StackPanel>

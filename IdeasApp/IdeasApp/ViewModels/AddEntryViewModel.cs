@@ -12,7 +12,7 @@ namespace IdeasApp.ViewModels {
 		public string NewEntryTaskName { get; set; }
 		public string NewEntryPriority { get; set; }
 		public int NewEntryEstTime { get; set; }
-		public DateTime NewEntryDeadline { get; set; }
+		public DateTime NewEntryDeadline { get; set; } = DateTime.Now;
 
 		public Entry NewEntry { get; set; }
 
@@ -29,7 +29,7 @@ namespace IdeasApp.ViewModels {
 			this.NewEntry.TaskName = NewEntryTaskName;
 			this.NewEntry.Priority = NewEntryPriority;
 			this.NewEntry.EstimatedTime = NewEntryEstTime;
-			this.NewEntry.Deadline = DateTime.Now;
+			this.NewEntry.Deadline = NewEntryDeadline;
 			Startup.ideasDataTable.Create(NewEntry);
 			MainMenuViewModel.taskTableView.Ideas.Add(NewEntry);
 			this.TryClose();
