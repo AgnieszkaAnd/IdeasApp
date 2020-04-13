@@ -11,19 +11,14 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using IdeasApp.Models;
-using System.Data.SQLite;
-using System.Data.SQLite.Linq;
-using System.Data.SqlClient;
-using System.Data;
 
 namespace IdeasApp.Views {
     /// <summary>
-    /// Interaction logic for TasksListView.xaml
+    /// Interaction logic for AppShellView.xaml
     /// </summary>
-    /*public partial class TasksListView : Window {
-        public TasksListView() {
+    public partial class AppShellView : Window {
+        public AppShellView() {
             InitializeComponent();
         }
-    }*/
+    }
 }

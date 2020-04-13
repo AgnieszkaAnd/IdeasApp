@@ -6,9 +6,11 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary>
-                    <local:MainMenu x:Key="MainMenu"/>
+                    <local:Startup x:Key="Startup"/>
                 </ResourceDictionary>
+                <ResourceDictionary Source="ButtonStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
+    
 </Application>
