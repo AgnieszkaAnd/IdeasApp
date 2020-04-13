@@ -18,5 +18,6 @@ namespace IdeasApp.ViewModels {
         public void ShowTasksList() {
             ActivateItem(new TasksListViewModel());
         }
+
     }
 }

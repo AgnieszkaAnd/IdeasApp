@@ -36,7 +36,9 @@
             <TextBlock Text="Deadline" FontFamily="Candara light" FontSize="15"/>
             <TextBox x:Name="deadlineInput"></TextBox>
             <TextBlock Text="Priority" FontFamily="Candara light" FontSize="15"/>
-            <TextBox x:Name="priorityInput" Text="{Binding NewEntryPriority, Mode=TwoWay}"></TextBox>
+            <!--<TextBox x:Name="priorityInput" Text="{Binding NewEntryPriority, Mode=TwoWay}"></TextBox>-->
+            <!--<ComboBox x:Name="priorityInput" ItemsSource="{Binding Path=Priorities}" SelectedItem="{Binding Path=NewEntryPriority}"/>-->
+            <ComboBox x:Name="priorityInput" ItemsSource="{Binding Path=Priorities}" SelectedItem="{Binding Path=NewEntryPriority}"/>
             <TextBlock Text="Estimated Time" FontFamily="Candara light" FontSize="15"/>
             <TextBox x:Name="estTimeInput" Text="{Binding NewEntryEstTime, Mode=TwoWay}"></TextBox>
         </StackPanel>

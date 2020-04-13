@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 using Caliburn.Micro;
 using IdeasApp.Models;
 
 namespace IdeasApp.ViewModels {
+
 	public partial class AddEntryViewModel : Screen {
 		public string NewEntryCategory { get; set; }
 		public string NewEntryTaskName { get; set; }
@@ -12,6 +15,13 @@ namespace IdeasApp.ViewModels {
 		public DateTime NewEntryDeadline { get; set; }
 
 		public Entry NewEntry { get; set; }
+
+		public List<string> Priorities { get; set; } = new List<string>() {
+			"IMPORTANT_URGENT",
+			"IMPORTANT_NOT_URGENT",
+			"NOT_IMPORTANT_URGENT",
+			"NOT_IMPORTANT_NOT_URGENT"
+		};
 
 		public void AddButton_Click(object sender, EventArgs e) {
 			NewEntry = new Entry();

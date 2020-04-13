@@ -9,12 +9,12 @@ using System.Data.SqlClient;
 using System.Data;
 
 namespace IdeasApp.Models {
-    public class EntryRepository : IDataAccessObject {
+    public class EntryRepository: IDataAccessObject {
         private readonly SQLiteConnection Con;
 
         public EntryRepository(SQLiteConnection DbPath) => Con = DbPath;
 
-
+        
         private EnumerableRowCollection<DataRow> runQuery(string query) {
 
             SQLiteDataAdapter adapter = new SQLiteDataAdapter();
@@ -53,8 +53,8 @@ namespace IdeasApp.Models {
         }
 
         public List<Entry> ReadAll() {
-            var queryResult = runQuery($"SELECT * FROM Tasks");
-            return ConvertResultToEntryList(queryResult);
+        var queryResult = runQuery($"SELECT * FROM Tasks");
+        return ConvertResultToEntryList(queryResult);
         }
 
         public void Create(Entry entry) {
@@ -72,7 +72,7 @@ namespace IdeasApp.Models {
 
             try {
                 insertCommand.ExecuteNonQuery();
-            } catch (Exception e) {
+            } catch ( Exception e) {
                 Console.WriteLine(e);
             }
             Con.Close();
@@ -99,7 +99,8 @@ namespace IdeasApp.Models {
 
             try {
                 updateCommand.ExecuteNonQuery();
-            } catch (Exception e) {
+            }
+            catch (Exception e) {
                 Console.WriteLine(e);
             }
 
@@ -111,11 +112,12 @@ namespace IdeasApp.Models {
                   "Delete from Tasks where Id=@Id", this.Con);
             insertCommand.CommandType = CommandType.Text;
             // TODO fill catch action - e.g. write info to log file
-            try { insertCommand.Parameters.AddWithValue("Id", entry.Id); } catch (NullReferenceException) { }
-
+            try { insertCommand.Parameters.AddWithValue("Id", entry.Id); } catch(NullReferenceException) {  }
+            
             try {
                 insertCommand.ExecuteNonQuery();
-            } catch (Exception e) {
+            }
+            catch (Exception e) {
                 Console.WriteLine(e);
             }
 
@@ -128,11 +130,11 @@ namespace IdeasApp.Models {
         }
 
 
-        /* To do:
-        + ReadByEntryDate
-        + ReadByTask
-        + ReadByPriority
-        Misc methods
-        */
-    }
+            /* To do:
+            + ReadByEntryDate
+            + ReadByTask
+            + ReadByPriority
+            Misc methods
+            */
+        }
 }

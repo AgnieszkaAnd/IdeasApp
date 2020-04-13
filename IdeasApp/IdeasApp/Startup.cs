@@ -18,8 +18,8 @@ namespace IdeasApp {
         //TODO: update class name to Startup/Bootstrapper - not Menu
         public Startup() {
             Initialize();
-
             connectionToDB = new SQLiteConnection(@"data source=C:\Users\asus\Documents\CODECOOL\2_OOP\6_\IdeasApp_v10\IdeasApp\IdeasApp\IdeasDb.db");
+            //connectionToDB = new SQLiteConnection("Data Source=" + System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase) + "\\..\\IdeasDb.db");
             ideasDataTable = new EntryRepository(connectionToDB);
         }
 
@@ -27,6 +27,10 @@ namespace IdeasApp {
             //TODO Pass Entry Repository as parameter in DisplayRootViewFor to MainMenuViewModel constructor
             new AppShellViewModel();
             DisplayRootViewFor<AppShellViewModel>();
+        }
+
+        protected override void OnExit(object sender, EventArgs e) {
+            base.OnExit(sender, e);
         }
     }
 }

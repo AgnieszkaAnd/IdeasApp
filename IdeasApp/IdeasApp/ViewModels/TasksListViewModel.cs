@@ -12,11 +12,12 @@ namespace IdeasApp.ViewModels {
 
     public class TasksListViewModel : Conductor<object>.Collection.OneActive {
 
-        public static IWindowManager manager = new WindowManager();
+        public static WindowManager manager = new WindowManager();
         public static Entry SelectedEntry { get; set; }
         private AddEntryViewModel addingWindow;
         private UpdateEntryViewModel updateWindow;
         public BindableCollection<Entry> Ideas { get; set; }
+
 
         public TasksListViewModel() {
             var ideasList = Startup.ideasDataTable.ReadAll();
