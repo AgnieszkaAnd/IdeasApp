@@ -75,7 +75,6 @@ namespace IdeasApp.Models {
             } catch ( Exception e) {
                 Console.WriteLine(e);
             }
-
             Con.Close();
         }
 

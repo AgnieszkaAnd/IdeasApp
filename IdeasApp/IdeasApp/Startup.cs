@@ -1,24 +1,22 @@
 ﻿using Caliburn.Micro;
 using IdeasApp.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using IdeasApp.Models;
 using System.Data.SQLite;
-using System.Data.SQLite.Linq;
-using System.Data.SqlClient;
-using System.Data;
 
 namespace IdeasApp {
-    public class MainMenu : BootstrapperBase {
+    public class Startup : BootstrapperBase {
         public int SwitchView { get; set; }
+
+        //TODO: Use Dependency Injection design pattern
+
+        //FIXME: no static fields, move that to ViewModel
         public static SQLiteConnection connectionToDB;
         public static EntryRepository ideasDataTable;
 
-        public MainMenu() {
+        //TODO: update class name to Startup/Bootstrapper - not Menu
+        public Startup() {
             Initialize();
 
             connectionToDB = new SQLiteConnection(@"data source=C:\Users\asus\Documents\CODECOOL\2_OOP\6_\IdeasApp_v10\IdeasApp\IdeasApp\IdeasDb.db");
@@ -26,7 +24,9 @@ namespace IdeasApp {
         }
 
         protected override void OnStartup(object sender, StartupEventArgs e) {
-            DisplayRootViewFor<MainMenuViewModel>();
+            //TODO Pass Entry Repository as parameter in DisplayRootViewFor to MainMenuViewModel constructor
+            new AppShellViewModel();
+            DisplayRootViewFor<AppShellViewModel>();
         }
     }
 }

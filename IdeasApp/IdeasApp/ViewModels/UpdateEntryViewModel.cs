@@ -1,4 +1,5 @@
-﻿using IdeasApp.Models;
+﻿using Caliburn.Micro;
+using IdeasApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 using System.Windows;
 
 namespace IdeasApp.ViewModels {
-    class UpdateEntryViewModel : Window {
+    class UpdateEntryViewModel : Screen {
 		public string UpdateEntryCategory { get; set; }
 		public string UpdateEntryTaskName { get; set; }
 		public string UpdateEntryPriority { get; set; }
@@ -19,8 +20,9 @@ namespace IdeasApp.ViewModels {
 			TasksListViewModel.SelectedEntry.Priority = UpdateEntryPriority;
 			TasksListViewModel.SelectedEntry.EstimatedTime = UpdateEntryEstTime;
 			TasksListViewModel.SelectedEntry.Deadline = DateTime.Now;
-			MainMenu.ideasDataTable.Update(TasksListViewModel.SelectedEntry);
+			Startup.ideasDataTable.Update(TasksListViewModel.SelectedEntry);
 			MainMenuViewModel.taskTableView.Ideas.Refresh();
+			this.TryClose();
 		}
 
 	}

@@ -1,5 +1,4 @@
-﻿using Caliburn.Micro;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,11 +14,11 @@ using System.Windows.Shapes;
 
 namespace IdeasApp.Views {
     /// <summary>
-    /// Interaction logic for MainMenuView.xaml
+    /// Interaction logic for AppShellView.xaml
     /// </summary>
-    //public partial class MainMenuView : Screen {
-    //    public MainMenuView() {
-    //        InitializeComponent();
-    //    }
-    //}
+    public partial class AppShellView : Window {
+        public AppShellView() {
+            InitializeComponent();
+        }
+    }
 }

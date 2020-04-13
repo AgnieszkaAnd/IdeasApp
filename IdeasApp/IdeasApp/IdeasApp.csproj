@@ -94,16 +94,20 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainMenu.cs" />
+    <Compile Include="Startup.cs" />
     <Compile Include="Models\Entry.cs" />
     <Compile Include="Models\EntryRepository.cs" />
     <Compile Include="Models\IDataAccessObject.cs" />
     <Compile Include="ViewModels\AddEntryViewModel.cs" />
+    <Compile Include="ViewModels\AppShellViewModel.cs" />
     <Compile Include="ViewModels\MainMenuViewModel.cs" />
     <Compile Include="ViewModels\TasksListViewModel.cs" />
     <Compile Include="ViewModels\UpdateEntryViewModel.cs" />
     <Compile Include="Views\AddEntryView.xaml.cs">
       <DependentUpon>AddEntryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AppShellView.xaml.cs">
+      <DependentUpon>AppShellView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainMenuView.xaml.cs">
       <DependentUpon>MainMenuView.xaml</DependentUpon>
@@ -148,6 +152,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AddEntryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AppShellView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

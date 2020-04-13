@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Navigation;
 using Caliburn.Micro;
 using IdeasApp.Models;
 
 namespace IdeasApp.ViewModels {
-	public partial class AddEntryViewModel : Window {
+	public partial class AddEntryViewModel : Screen {
 		public string NewEntryCategory { get; set; }
 		public string NewEntryTaskName { get; set; }
 		public string NewEntryPriority { get; set; }
@@ -25,8 +20,9 @@ namespace IdeasApp.ViewModels {
 			this.NewEntry.Priority = NewEntryPriority;
 			this.NewEntry.EstimatedTime = NewEntryEstTime;
 			this.NewEntry.Deadline = DateTime.Now;
-			MainMenu.ideasDataTable.Create(NewEntry);
-			MainMenuViewModel.taskTableView.Ideas.Refresh();
+			Startup.ideasDataTable.Create(NewEntry);
+			MainMenuViewModel.taskTableView.Ideas.Add(NewEntry);
+			this.TryClose();
 		}
 	}
 }
