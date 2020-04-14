@@ -2,6 +2,7 @@
 using IdeasApp.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Data.SQLite;
 using System.Linq;
 using System.Text;
@@ -25,8 +26,8 @@ namespace IdeasApp.ViewModels {
 		private IDataAccessObject IdeasDataTable { get; set; }
 
 
-		public UpdateEntryViewModel(SQLiteConnection sqliteConnecton) {
-			this.IdeasDataTable = new EntryRepository(sqliteConnecton);
+		public UpdateEntryViewModel(DbConnection DBconnection) {
+			this.IdeasDataTable = new EntryRepository((SQLiteConnection)DBconnection);
 			try {
 				UpdateEntryCategory = TasksListViewModel.SelectedEntry.Category;
 				UpdateEntryTaskName = TasksListViewModel.SelectedEntry.TaskName;

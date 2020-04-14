@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Data.SQLite;
 using System.Linq;
 using System.Windows;
@@ -26,8 +27,8 @@ namespace IdeasApp.ViewModels {
 		private IDataAccessObject IdeasDataTable { get; set; }
 
 
-		public AddEntryViewModel(SQLiteConnection sqliteConnecton) {
-			this.IdeasDataTable = new EntryRepository(sqliteConnecton);
+		public AddEntryViewModel(DbConnection DBconnection) {
+			this.IdeasDataTable = new EntryRepository((SQLiteConnection)DBconnection);
 		}
 
 		public void AddButton_Click(object sender, EventArgs e) {
