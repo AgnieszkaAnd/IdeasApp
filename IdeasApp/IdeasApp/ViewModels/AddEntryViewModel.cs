@@ -23,7 +23,7 @@ namespace IdeasApp.ViewModels {
 			"NOT_IMPORTANT_URGENT",
 			"NOT_IMPORTANT_NOT_URGENT"
 		};
-		private EntryRepository IdeasDataTable { get; set; }
+		private IDataAccessObject IdeasDataTable { get; set; }
 
 
 		public AddEntryViewModel(SQLiteConnection sqliteConnecton) {

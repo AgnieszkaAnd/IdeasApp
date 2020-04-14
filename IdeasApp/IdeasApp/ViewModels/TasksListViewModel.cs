@@ -17,7 +17,7 @@ namespace IdeasApp.ViewModels {
         private AddEntryViewModel addingWindow;
         private UpdateEntryViewModel updateWindow;
         private SQLiteConnection SqliteConn { get; set; }
-        private EntryRepository IdeasDataTable { get; set; }
+        private IDataAccessObject IdeasDataTable { get; set; }
         private List<Entry> IdeasList { get; set; } 
         public BindableCollection<Entry> Ideas { get; set; }
 

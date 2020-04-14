@@ -13,7 +13,6 @@ namespace IdeasApp.Models {
         private readonly SQLiteConnection Con;
 
         public EntryRepository(SQLiteConnection DbPath) => Con = DbPath;
-
         
         private EnumerableRowCollection<DataRow> runQuery(string query) {
 
@@ -39,7 +38,6 @@ namespace IdeasApp.Models {
                            }).ToList();
             return Entries;
         }
-
 
         public Entry ConvertResultToEntry(DataRow QueryResult) {
             Entry entry = new Entry();
@@ -128,7 +126,6 @@ namespace IdeasApp.Models {
             //return ConvertResultToEntryList(queryResult);
             return null;
         }
-
 
             /* To do:
             + ReadByEntryDate
