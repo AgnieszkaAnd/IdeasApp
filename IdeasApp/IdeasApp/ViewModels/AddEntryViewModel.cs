@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Data.SQLite;
-using System.Linq;
-using System.Windows;
 using Caliburn.Micro;
 using IdeasApp.Models;
 
