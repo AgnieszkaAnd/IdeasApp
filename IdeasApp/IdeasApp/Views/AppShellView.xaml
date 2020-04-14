@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IdeasApp.Views"
         mc:Ignorable="d"
-        Title="IdeasApp" Height="450" Width="800" WindowStartupLocation="CenterScreen"
-        ResizeMode="CanMinimize" Foreground="#FF00E8FF" Cursor="Pen" Visibility="Visible"
+        Title="IdeasApp" SizeToContent="WidthAndHeight"
+        ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen"
+        Foreground="#FF00E8FF" Cursor="Pen" Visibility="Visible"
         Background="#007C89" BorderThickness="0,0,0,0">
     <Grid>
         <ContentControl x:Name="ActiveItem" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="8" Grid.IsSharedSizeScope="True"/>

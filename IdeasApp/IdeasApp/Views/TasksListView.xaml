@@ -31,10 +31,11 @@
                    FontFamily="Candara Light" FontSize="36" Foreground="White"/>
         <DataGrid x:Name="Ideas" Grid.Row="1" Grid.Column="1"
                   Margin="10" FontFamily="Candara Light" FontSize="15"
-                  ColumnWidth="*" HorizontalContentAlignment="Stretch"
+                  ColumnWidth="auto" HorizontalAlignment="Center"
+                  IsReadOnly="True"
+                  HorizontalContentAlignment="Stretch"
                   VerticalContentAlignment="Stretch"
-                  AutoGenerateColumns="False"
-                  SelectedItem="{Binding SelectedEntry, Mode=TwoWay}" BorderBrush="White" HorizontalGridLinesBrush="#FF004A51" VerticalGridLinesBrush="#FF004A51">
+                  SelectedItem="{Binding SelectedEntry, Mode=TwoWay}" BorderBrush="White" HorizontalGridLinesBrush="#FF004A51" VerticalGridLinesBrush="#FF004A51" AutoGenerateColumns="False">
             <DataGrid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFDAFFFD" Offset="0.003"/>
@@ -42,10 +43,21 @@
                 </LinearGradientBrush>
             </DataGrid.Background>
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Id" Binding="{Binding Path=Id}"/>
+                <DataGridTextColumn Header="Id" Binding="{Binding Path=Id}" Foreground="#FFB71919"/>
                 <DataGridTextColumn Header="Category" Binding="{Binding Path=Category}"/>
                 <DataGridTextColumn Header="TaskName" Binding="{Binding Path=TaskName}"/>
-                <DataGridTextColumn Header="Priority" Binding="{Binding Path=Priority}"/>
+                <DataGridTemplateColumn Header="Priority">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Priority}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <ComboBox ItemsSource="{Binding Path=Priorities}" SelectedItem="{Binding Path=Priority}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn> 
                 <DataGridTextColumn Header="EstimatedTime" Binding="{Binding Path=EstimatedTime}"/>
 
                 <DataGridTemplateColumn Header="Deadline">

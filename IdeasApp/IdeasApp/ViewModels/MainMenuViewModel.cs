@@ -1,26 +1,18 @@
 ﻿using Caliburn.Micro;
-using IdeasApp.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.Common;
 
 namespace IdeasApp.ViewModels {
     public class MainMenuViewModel : Conductor<object>.Collection.OneActive {
-
-        //TODO
-        /*public MainMenuViewModel(EntryRepository databaseConnenction) {
-                
-        }*/
-        public MainMenuViewModel() {
-
-        }
-
         public static TasksListViewModel taskTableView;
 
+        public DbConnection DatabaseConnection { get; set; }
+
+        public MainMenuViewModel(DbConnection DBconnection) {
+            this.DatabaseConnection = DBconnection;
+        }
+
         public void LoadTasksList() {
-            taskTableView = new TasksListViewModel();
+            taskTableView = new TasksListViewModel(DatabaseConnection);
             ActivateItem(taskTableView);
         }
     }

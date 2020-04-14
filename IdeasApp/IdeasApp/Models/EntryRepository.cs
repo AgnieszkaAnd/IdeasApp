@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.SQLite;
-using System.Data.SQLite.Linq;
-using System.Data.SqlClient;
 using System.Data;
 
 namespace IdeasApp.Models {
@@ -13,7 +9,6 @@ namespace IdeasApp.Models {
         private readonly SQLiteConnection Con;
 
         public EntryRepository(SQLiteConnection DbPath) => Con = DbPath;
-
         
         private EnumerableRowCollection<DataRow> runQuery(string query) {
 
@@ -39,7 +34,6 @@ namespace IdeasApp.Models {
                            }).ToList();
             return Entries;
         }
-
 
         public Entry ConvertResultToEntry(DataRow QueryResult) {
             Entry entry = new Entry();
@@ -111,7 +105,8 @@ namespace IdeasApp.Models {
             SQLiteCommand insertCommand = new SQLiteCommand(
                   "Delete from Tasks where Id=@Id", this.Con);
             insertCommand.CommandType = CommandType.Text;
-            insertCommand.Parameters.AddWithValue("Id", entry.Id);
+            // TODO fill catch action - e.g. write info to log file
+            try { insertCommand.Parameters.AddWithValue("Id", entry.Id); } catch(NullReferenceException) {  }
             
             try {
                 insertCommand.ExecuteNonQuery();
@@ -127,7 +122,6 @@ namespace IdeasApp.Models {
             //return ConvertResultToEntryList(queryResult);
             return null;
         }
-
 
             /* To do:
             + ReadByEntryDate
