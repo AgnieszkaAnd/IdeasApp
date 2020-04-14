@@ -2,6 +2,7 @@
 using IdeasApp.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,14 +14,16 @@ namespace IdeasApp.ViewModels {
         /*public MainMenuViewModel(EntryRepository databaseConnenction) {
                 
         }*/
-        public MainMenuViewModel() {
+        public SQLiteConnection SqliteConnection { get; set; }
 
+        public MainMenuViewModel(SQLiteConnection sqliteConnection) {
+            this.SqliteConnection = sqliteConnection;
         }
 
         public static TasksListViewModel taskTableView;
 
         public void LoadTasksList() {
-            taskTableView = new TasksListViewModel();
+            taskTableView = new TasksListViewModel(SqliteConnection);
             ActivateItem(taskTableView);
         }
     }
