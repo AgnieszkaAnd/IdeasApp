@@ -38,6 +38,9 @@ namespace IdeasApp.ViewModels {
 			this.NewEntry.Deadline = NewEntryDeadline;
 			IdeasDataTable.Create(NewEntry);
 			MainMenuViewModel.taskTableView.Ideas.Add(NewEntry);
+			//MainMenuViewModel.taskTableView.IdeasList;
+			//MainMenuViewModel.taskTableView.RefreshIdeas();
+			MainMenuViewModel.taskTableView.Ideas.Refresh();
 			this.TryClose();
 		}
 	}

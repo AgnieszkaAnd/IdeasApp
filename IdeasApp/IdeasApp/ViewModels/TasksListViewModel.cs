@@ -13,13 +13,20 @@ namespace IdeasApp.ViewModels {
         private UpdateEntryViewModel updateWindow;
         private DbConnection DatabaseConnection { get; set; }
         private IDataAccessObject IdeasDataTable { get; set; }
-        private List<Entry> IdeasList { get; set; } 
+        public List<Entry> IdeasList { get; set; } 
         public BindableCollection<Entry> Ideas { get; set; }
         public static Entry SelectedEntry { get; set; }
 
         public TasksListViewModel(DbConnection DBconnection) {
             this.DatabaseConnection = DBconnection;
             IdeasDataTable = new EntryRepository((SQLiteConnection)DBconnection);
+            IdeasList = IdeasDataTable.ReadAll();
+            Ideas = new BindableCollection<Entry>(IdeasList);
+        }
+        public void RefreshIdeas() {
+            DbConnection DatabaseConnection_test = new SQLiteConnection(@"data source=C:\Users\asus\Documents\CODECOOL\2_OOP\6_\IdeasApp_v10\IdeasApp\IdeasApp\IdeasDb.db");
+            IdeasDataTable = new EntryRepository((SQLiteConnection)DatabaseConnection_test);
+            //IdeasDataTable = new EntryRepository((SQLiteConnection)DatabaseConnection);
             IdeasList = IdeasDataTable.ReadAll();
             Ideas = new BindableCollection<Entry>(IdeasList);
         }

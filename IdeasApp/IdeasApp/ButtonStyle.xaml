@@ -19,4 +19,20 @@
         </Setter>
     </Style>
 
+    <Style x:Key="PriorityTextBlock" TargetType="TextBlock">
+        <Style.Triggers>
+            <Trigger Property="Text" Value="IMPORTANT_URGENT">
+                <Setter Property="Background" Value="#4cc954"/>
+            </Trigger>
+            <Trigger Property="Text" Value="IMPORTANT_NOT_URGENT">
+                <Setter Property="Background" Value="#47d9e1"/>
+            </Trigger>
+            <Trigger Property="Text" Value="NOT_IMPORTANT_URGENT">
+                <Setter Property="Background" Value="#fb342c"/>
+            </Trigger>
+            <Trigger Property="Text" Value="NOT_IMPORTANT_NOT_URGENT">
+                <Setter Property="Background" Value="#acacac"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
 </ResourceDictionary>
