@@ -5,16 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IdeasApp.Views"
         mc:Ignorable="d"
-        Height="400" Width="750" Background="#007C89">
+        Height="450" Width="950" Background="#001B89">
     <Grid OpacityMask="Black">
-        <Grid.Background>
+        <!--<Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="#FF8ED3CF" Offset="0"/>
                 <GradientStop Color="#FFA1DCDA" Offset="1"/>
                 <GradientStop Color="#FFA7DDDB" Offset="0.597"/>
                 <GradientStop Color="#FFA4DCDA" Offset="0.339"/>
             </LinearGradientBrush>
-        </Grid.Background>
+        </Grid.Background>-->
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
@@ -24,12 +24,18 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="5"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="5"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="Task Overview" Grid.Row="0" Grid.Column="1" 
+        <Image Grid.Row="1" Grid.Column="4" Stretch="Uniform" Width="250"
+               Source="C:\Users\asus\Documents\CODECOOL\2_OOP\6_\IdeasApp_v10\IdeasApp\IdeasApp\IdeasApp\Resources\The-Eisenhower-Decision-Matrix-png-1024x768.png"/>
+        <TextBlock Text="Task Overview" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="7" 
                    VerticalAlignment="Center" HorizontalAlignment="Center"
                    FontFamily="Candara Light" FontSize="36" Foreground="White"/>
-        <DataGrid x:Name="Ideas" Grid.Row="1" Grid.Column="1"
+        <DataGrid x:Name="Ideas" Grid.Row="1" Grid.Column="2"
                   Margin="10" FontFamily="Candara Light" FontSize="15"
                   ColumnWidth="auto" HorizontalAlignment="Center"
                   IsReadOnly="True"
@@ -49,7 +55,7 @@
                 <DataGridTemplateColumn Header="Priority">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Path=Priority}"/>
+                            <TextBlock Text="{Binding Path=Priority}" Style="{StaticResource PriorityTextBlock}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                     <DataGridTemplateColumn.CellEditingTemplate>
@@ -69,7 +75,7 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center"
+        <StackPanel Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="7" Orientation="Horizontal" HorizontalAlignment="Center"
                     MinHeight="30" Margin="10">
             <Button x:Name="AddEntry" Content="Add Entry" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center"
                 MinWidth="150" FontFamily="Candara Light" FontSize="18" Style="{StaticResource RoundButtonTemplate}" Foreground="White" Margin="10,0,10,0">
