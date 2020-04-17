@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IdeasApp.Views"
         mc:Ignorable="d"
-        Height="450" Width="950" Background="#001B89"
+        Height="450" Width="950" Background="#0F52BA"
         Foreground="#FF00E8FF" Cursor="Pen"
         Visibility="Visible" BorderThickness="0,0,0,0">
     <Grid>
@@ -14,12 +14,12 @@
         </Grid.Background>-->
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="5"/>
+            <RowDefinition Height="30"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="5"/>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -34,7 +34,7 @@
                 <DropShadowEffect Opacity="0.3"/>
             </StackPanel.Effect>
             <Button Content="Import" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center"
-                MinWidth="100" MinHeight="30" FontFamily="Candara Light" FontSize="18" Style="{StaticResource RoundButtonTemplate}" Foreground="White">
+                MinWidth="100" MinHeight="30" FontFamily="Candara" FontSize="18" Style="{StaticResource RoundButtonTemplate}" Foreground="White">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FF26ACA6" Offset="0"/>
@@ -43,7 +43,7 @@
                 </Button.Background>
             </Button>
             <Button Content="Calendar" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center"
-                MinWidth="100" FontFamily="Candara Light" FontSize="18" Style="{StaticResource RoundButtonTemplate}">
+                MinWidth="100" FontFamily="Candara" FontSize="18" Style="{StaticResource RoundButtonTemplate}">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FF26ACA6" Offset="0"/>
@@ -52,7 +52,7 @@
                 </Button.Background>
             </Button>
             <Button Content="Export" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center"
-                MinWidth="100" FontFamily="Candara Light" FontSize="18" Style="{StaticResource RoundButtonTemplate}">
+                MinWidth="100" FontFamily="Candara" FontSize="18" Style="{StaticResource RoundButtonTemplate}">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FF26ACA6" Offset="0"/>
@@ -64,7 +64,7 @@
         </StackPanel>
 
         <Button x:Name="LoadTasksList" Content="Organizer" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center"
-                MinHeight="50" MinWidth="150" FontFamily="Candara Light" FontSize="20" Style= "{StaticResource RoundButtonTemplate}" RenderTransformOrigin="0.5,0.5">
+                MinHeight="50" MinWidth="150" FontFamily="Candara" FontSize="20" Style= "{StaticResource RoundButtonTemplate}" RenderTransformOrigin="0.5,0.5">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF26ACA6" Offset="0"/>

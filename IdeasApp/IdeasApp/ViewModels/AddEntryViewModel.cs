@@ -37,10 +37,14 @@ namespace IdeasApp.ViewModels {
 			this.NewEntry.EstimatedTime = NewEntryEstTime;
 			this.NewEntry.Deadline = NewEntryDeadline;
 			IdeasDataTable.Create(NewEntry);
+			// TODO: Update workaround to final version
+			// --- WORKAROUND TO UPDATE ID'S IN DATAGRID ---
+			int index = MainMenuViewModel.taskTableView.Ideas.Count - 1;
+			this.NewEntry.Id = MainMenuViewModel.taskTableView.Ideas[index].Id + 1;
 			MainMenuViewModel.taskTableView.Ideas.Add(NewEntry);
-			//MainMenuViewModel.taskTableView.IdeasList;
+			// ---------------------------------------------------
 			//MainMenuViewModel.taskTableView.RefreshIdeas();
-			MainMenuViewModel.taskTableView.Ideas.Refresh();
+			//MainMenuViewModel.taskTableView.Ideas.Refresh();
 			this.TryClose();
 		}
 	}

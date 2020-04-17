@@ -24,11 +24,12 @@ namespace IdeasApp.ViewModels {
             Ideas = new BindableCollection<Entry>(IdeasList);
         }
         public void RefreshIdeas() {
+            Ideas = new BindableCollection<Entry>();
             DbConnection DatabaseConnection_test = new SQLiteConnection(@"data source=C:\Users\asus\Documents\CODECOOL\2_OOP\6_\IdeasApp_v10\IdeasApp\IdeasApp\IdeasDb.db");
             IdeasDataTable = new EntryRepository((SQLiteConnection)DatabaseConnection_test);
-            //IdeasDataTable = new EntryRepository((SQLiteConnection)DatabaseConnection);
             IdeasList = IdeasDataTable.ReadAll();
             Ideas = new BindableCollection<Entry>(IdeasList);
+            Ideas.Refresh();
         }
         public void AddEntry() {
             this.addingWindow = new AddEntryViewModel(DatabaseConnection);
