@@ -185,10 +185,10 @@
     <Resource Include="Views\bg.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="ADD.png" />
-    <Resource Include="bg.png" />
-    <Resource Include="The-Eisenhower-Decision-Matrix-png-1024x768.png" />
-    <Resource Include="UPDATE.png" />
+    <Resource Include="Images\ADD.png" />
+    <Resource Include="Images\bg.png" />
+    <Resource Include="Images\The-Eisenhower-Decision-Matrix-png-1024x768.png" />
+    <Resource Include="Images\UPDATE.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\logo.png" />

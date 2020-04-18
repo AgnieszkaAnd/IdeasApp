@@ -28,7 +28,7 @@
         <TextBlock Text="Task Overview" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="7" 
                    VerticalAlignment="Center" HorizontalAlignment="Center"
                    FontFamily="Candara" FontSize="36" Foreground="White"/>
-        <DataGrid x:Name="Ideas" Grid.Row="2" Grid.Column="2"
+        <DataGrid x:Name="Ideas" Grid.Row="2" Grid.Column="2" MaxWidth="600"
                   Margin="10" FontFamily="Candara Light" FontSize="15"
                   ColumnWidth="auto" HorizontalAlignment="Center"
                   IsReadOnly="True" VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True"
