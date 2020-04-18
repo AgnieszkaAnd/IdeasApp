@@ -24,7 +24,7 @@
             <ColumnDefinition Width="5"/>
         </Grid.ColumnDefinitions>
         <Image Grid.Row="2" Grid.Column="4" Stretch="Uniform" Width="300"
-               Source="C:\Users\asus\Documents\CODECOOL\2_OOP\6_\IdeasApp_v10\IdeasApp\IdeasApp\IdeasApp\Resources\The-Eisenhower-Decision-Matrix-png-1024x768.png"/>
+               Source="pack://application:,,,/Images/The-Eisenhower-Decision-Matrix-png-1024x768.png"/>
         <TextBlock Text="Task Overview" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="7" 
                    VerticalAlignment="Center" HorizontalAlignment="Center"
                    FontFamily="Candara" FontSize="36" Foreground="White"/>

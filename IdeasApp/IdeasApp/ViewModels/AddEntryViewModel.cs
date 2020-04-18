@@ -6,7 +6,6 @@ using Caliburn.Micro;
 using IdeasApp.Models;
 
 namespace IdeasApp.ViewModels {
-
 	public partial class AddEntryViewModel : Screen {
 		public string NewEntryCategory { get; set; }
 		public string NewEntryTaskName { get; set; }
